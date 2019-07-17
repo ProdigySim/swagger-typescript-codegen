@@ -39,10 +39,12 @@ export interface SwaggerBoolean extends SwaggerType {
 
 export interface SwaggerString extends SwaggerType {
   readonly type: "string";
+  readonly format?: string;
 }
 
 export interface SwaggerNumber extends SwaggerType {
   readonly type: "number" | "integer";
+  readonly format?: string;
 }
 
 export interface SwaggerReference extends SwaggerType {

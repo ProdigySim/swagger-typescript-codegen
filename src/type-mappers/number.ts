@@ -4,13 +4,15 @@ import { SwaggerNumber, SwaggerType } from "../swagger/Swagger";
 export interface NumberTypeSpec extends TypeSpec {
   readonly tsType: "number";
   readonly isAtomic: true;
+  readonly format?: string;
 }
 
 export function makeNumberTypeSpec(swaggerType: SwaggerNumber): NumberTypeSpec {
   return {
     ...makeTypeSpecFromSwaggerType(swaggerType),
     tsType: "number",
-    isAtomic: true
+    isAtomic: true,
+    format: swaggerType.format
   };
 }
 
